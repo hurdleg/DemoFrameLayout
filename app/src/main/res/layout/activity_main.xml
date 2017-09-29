@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/colorSwatch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:height="200dp"
+        android:background="#000"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/hue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/colorSwatch"
+        android:labelFor="@+id/hueSB"
+        android:paddingBottom="8dp"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:text="Hue"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp"/>
+
+    <FrameLayout
+        android:id="@+id/hueLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hue"
+        android:paddingEnd="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="16dp">
+
+        <ImageView
+            android:id="@+id/hueGradient"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:contentDescription="Hue"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_hue" />
+
+        <SeekBar
+            android:id="@+id/hueSB"
+            android:layout_width="fill_parent"
+            android:layout_height="32dp"
+            android:max="359" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/saturation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/hueLayout"
+        android:labelFor="@+id/saturationSB"
+        android:paddingBottom="8dp"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:text="Saturation"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp"/>
+
+    <!-- TODO: using <FrameLayout> for the Hue as a template, make similar <FrameLayouts> for -->
+    <!-- TODO: Saturation and Value / Brightness -->
+
+    <!-- TODO: add a <FrameLayout> for the saturationLayout; appears below @+id/saturation -->
+    <!-- TODO: <FrameLayout> has 2 nested <View>s: <ImageView> (id is saturationGradient) and <SeekBar> (id is saturationSB) -->
+    <!-- TODO: <ImageView> set the src property to @drawable/gradient_saturation -->
+    <!-- TODO: <SeekBar> set the height to 32dp, and set the max to the maximum value for saturation -->
+
+    <!-- TODO: add a <TextView> for the value / brightness (id is brightness); appears below @+id/saturationLayout -->
+    <!-- TODO: add a <FrameLayout> for the brightnessLayout; appears below @+id/brightness -->
+    <!-- TODO: <FrameLayout> has 2 nested <View>s: <ImageView> (id is brightnessGradient> and <SeekBar> (id is brightnessSB) -->
+    <!-- TODO: <ImageView> set the src property to @drawable/gradient_brightness -->
+    <!-- TODO: <SeekBar> set the height to 32dp, and set max to the maximum value for value / brightness -->
+
+    <!-- TODO: add a <HorizontalScrollView> to hold the button gallery; appears below @+brightnessLayout -->
+    <!-- TODO: <HorizontalScrollView> has 1 nested <View>: <LinearLayout> with a horizontal orientation -->
+    <!-- TODO: <LinearLayout> has 15 nested <Button> views. -->
+
+</RelativeLayout>
